@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                         "Unable to store the signature",
                         Toast.LENGTH_SHORT
                 ).show()
-            }
+            }/*
             if (addSvgSignatureToGallery(mSignaturePad?.getSignatureSvg())) {
                 Toast.makeText(
                         this@MainActivity,
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                         "Unable to store the SVG signature",
                         Toast.LENGTH_SHORT
                 ).show()
-            }
+            }*/
         })
     }
 
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         canvas.drawColor(Color.WHITE)
         canvas.drawBitmap(bitmap, 0f, 0f, null)
         val stream: OutputStream = FileOutputStream(photo)
-        newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream)
+        newBitmap.compress(Bitmap.CompressFormat.PNG, 80, stream)
         stream.close()
     }
 
