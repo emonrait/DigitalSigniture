@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import com.github.gcacace.signaturepad.views.SignaturePad
 import java.io.*
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         verifyStoragePermissions(this)
         setContentView(R.layout.activity_main)
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         mSignaturePad = findViewById<View>(R.id.signature_pad) as SignaturePad
         mSignaturePad?.setOnSignedListener(object : SignaturePad.OnSignedListener {
             override fun onStartSigning() {
